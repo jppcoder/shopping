@@ -1,35 +1,28 @@
 //CREAMOS LAS VARIABLES
 
 const courses = document.querySelector('#courses-list'),
-    
+    total = document.querySelector('#total'),
     shoppingCartContent = document.querySelector('#cart-content tbody'),
-    
-    clearCartBtn = document.querySelector('#clear-cart');
+    clearCartBtn = document.querySelector('#clear-cart'); 
 
-    
-
-//CREAMOS LOS LISTENERS
-
+    //CREAMOS LOS LISTENERS
 loadEventListeners();
 
 function loadEventListeners () {
+    //comprar curso
     courses.addEventListener('click', buyCourse);
-
     //remover curso
     shoppingCartContent.addEventListener('click', removeCourse);
-
     //limpiar carrito
-
     clearCartBtn.addEventListener('click', clearCart);
-    
-    document.addEventListener('DOMContentLoaded', getFromLocalStorage);
-
-    
+    //domcargado
+    document.addEventListener('DOMContentLoaded', getFromLocalStorage);   
     
 }
 
-
 //CREAMOS LAS FUNCIONES A UTILIZAR
+
+//funcion comprar curso
 function buyCourse(e) {
     e.preventDefault();
     
@@ -45,7 +38,7 @@ function getCourseInfo(course) {
     const courseInfo = {
         image: course.querySelector('img').src,
         title: course.querySelector('h4').textContent,
-        price: course.querySelector('.price span').textContent,
+        price: parseInt( course.querySelector('.price span').textContent),
         id: course.querySelector('a').getAttribute('data-id')
     }
     
@@ -69,94 +62,106 @@ function addIntoCart(course) {
         shoppingCartContent.appendChild(row);
         //agregar en local storage
         saveIntoStorage(course);
-        saveIntoStoragePrice(course);
-        getTotalPrice(course);
+        //llamar a funcion de sumar total del carrito
+        sumTotal(course);
+        
 }
+
+function sumTotal (course) {
+        let sumar = getCoursesFromStorage();
+        //luego de obtener los datos del localstorage filtramos los datos dejando solo Precios
+        let sumarMap = sumar.map((sumar) => sumar.price);
+        //iteramos para sumar los valores del total
+        let sumado=0;
+        for(let i of sumarMap) sumado+=i;
+        console.log(sumado);  
+        
+        //creando la etiqueta en el carrito del Total, limpiando previamente si existe algun dato, para evitar sumas duplicadas
+        var div = document.getElementById('total');
+         while(div.firstChild){ 
+             div.removeChild(div.firstChild); 
+        }
+        //creando la etiqueta de suma
+        const row = document.createElement('div');
+         row.innerHTML = `
+                <h4>Total: ${sumado}</h4> `;
+                total.appendChild(row);
+        
+        }
 
 //agregando los cursos en localStorage
 function saveIntoStorage(course) {
     let courses = getCoursesFromStorage();
     
-    // add the course into the array
     courses.push(course);
     
-    // since storage only saves strings, we need to convert JSON into String
     localStorage.setItem('courses', JSON.stringify(courses) );
     
-}
-function saveIntoStoragePrice(course) {
-    
-    let coursePrice = getCoursesFromStorage();
-    // add the course into the array
-    
-    coursePrice.push(course.price);
-    // since storage only saves strings, we need to convert JSON into String
-    
-    localStorage.setItem('coursePrice', JSON.stringify(coursePrice) );
-    console.log(coursePrice)
 }
 
 function getCoursesFromStorage(){
 
     let courses;
-
     // si existe algo previo, obtenemos el valor o limpiamos el array
     if (localStorage.getItem('courses') === null) {
         courses = [];
+        
     } else {
         courses = JSON.parse(localStorage.getItem('courses'));
+        
     }
     return courses;
     
+    
 }
-
-function getTotalPrice(course) {
-    let totalPrice;
-    totalPrice = JSON.parse(localStorage.getItem('courses'));
-  
-}
-
-// remove course from the dom
+    
+// remover curso del DOM
 function removeCourse(e) {
     let course, courseId;
 
-    // Remove from the dom
+    // Remover
     if(e.target.classList.contains('remove')) {
          e.target.parentElement.parentElement.remove();
          course = e.target.parentElement.parentElement;
          courseId = course.querySelector('a').getAttribute('data-id');
     }
     console.log(courseId);
-    // remove from the local storage
+    // remover de local storage
     removeCourseLocalStorage(courseId);
 }
-// remove from local storage
+
+// removiendo curso del localstorage
 function removeCourseLocalStorage(id) {
     // get the local storage data
     let coursesLS = getCoursesFromStorage();
 
-    // loop trought the array and find the index to remove
+    // iterando el array para comparar con el id obtenido el selector para eliminar el objeto del array
     coursesLS.forEach(function(courseLS, index) {
          if(courseLS.id === id) {
               coursesLS.splice(index, 1);
          }
     });
 
-    // Add the rest of the array
+    // agregar el resto del array al localstorage
     localStorage.setItem('courses', JSON.stringify(coursesLS));
+    // llamar a la funcion suma de total de carrito
+    sumTotal();
 }
 
-
+//funcion que vacia el carrito completamente
 function clearCart (e) {
       
     while (shoppingCartContent.firstChild) {
         shoppingCartContent.removeChild (shoppingCartContent.firstChild);
         
     }
+    while (total.firstChild) {
+        total.removeChild (total.firstChild);
+        
+    }
+
 }
-
-//carga cuando el dom esta listo
-
+//genera nuevamente el carrito luego de eliminar algun item de la lista
 function getFromLocalStorage() {
     let coursesLS = getCoursesFromStorage();
 
@@ -179,3 +184,5 @@ function getFromLocalStorage() {
         shoppingCartContent.appendChild(row);
     });
 }
+
+
