@@ -1,9 +1,8 @@
-//CREAMOS LAS VARIABLES
-
 const courses = document.querySelector('#courses-list'),
     total = document.querySelector('#total'),
     shoppingCartContent = document.querySelector('#cart-content tbody'),
-    clearCartBtn = document.querySelector('#clear-cart'); 
+    clearCartBtn = document.querySelector('#clear-cart'),
+    rowJs = document.querySelector('#rowJs');
 
     //CREAMOS LOS LISTENERS
 loadEventListeners();
@@ -21,6 +20,26 @@ function loadEventListeners () {
 }
 
 //CREAMOS LAS FUNCIONES A UTILIZAR
+
+
+//cargar pagina con 
+function generateContent () {
+    for (const generate of courseData) {
+    let row = document.createElement('div');
+    row.className = "four columns"
+    row.innerHTML = `
+        <div class="card">
+            <img src="${generate.img}" class="course-image u-full-width">
+            <div class="info-card">
+                <h4>${generate.name}</h4>
+                <p class="price">5000<span class="u-pull-right ">${generate.price}</span></p>
+                <a href="#" class="u-full-width button-primary button input add-to-cart" data-id=${generate.id}>Add to Cart</a>
+            </div>
+        </div> `;
+        rowJs.appendChild(row);
+    }
+}
+generateContent();
 
 //funcion comprar curso
 function buyCourse(e) {
