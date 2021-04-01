@@ -1,56 +1,13 @@
 const courses = document.querySelector('#courses-list'),
-    courses2 = document.querySelector('#courses-list2'),
     total = document.querySelector('#total'),
     shoppingCartContent = document.querySelector('#cart-content tbody'),
     clearCartBtn = document.querySelector('#clear-cart'),
     rowJs = document.querySelector('#courses-list'),
     searchBar = document.querySelector('#searchBar'),
-    resultado = document.querySelector('#filtrado'),
-    boton = document.querySelector('#boton'),
-    clcard = document.querySelector('.card'),
     charactersList = document.querySelector('#charactersList');
 
     //CREAMOS LOS LISTENERS
 loadEventListeners();
-
-
-
-
-/*const filtrar = ()=> {
-    console.log(formulario.value);
-    const texto = formulario.value.toLowerCase();
-    console.log(texto);
-    console.log(typeof texto);
-    
-    if (texto == undefined) {
-        generateContent();
-
-
-
-    } else {
-            
-    for(let curso of courseData) {
-        let nombre = curso.name.toLocaleLowerCase();
-        if(nombre.indexOf(texto) !== -1) {
-            resultado.innerHTML +=
-            `<div class="card">
-                <img src="${curso.img}" class="card-img-top">
-                <div class="card-body">
-                    <h4>${curso.name}</h4>
-                    <p class="cardDesc">${curso.desc}</p>
-                    <p class="price">5000<span class="u-pull-right ">${curso.price}</span></p>
-                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${curso.id}>Add to Cart</a>
-                </div>
-            </div>`
-            
-        }
-    }
-    }
-}
-*/
-
-/* boton.addEventListener('click', filtrar); */
-
 
 function loadEventListeners () {
     //comprar curso
@@ -59,16 +16,13 @@ function loadEventListeners () {
     shoppingCartContent.addEventListener('click', removeCourse);
     //limpiar carrito
     clearCartBtn.addEventListener('click', clearCart);
-    
-    //domcargado
+        //domcargado
     document.addEventListener('DOMContentLoaded', getFromLocalStorage);   
-    
 }
 
 //CREAMOS LAS FUNCIONES A UTILIZAR
 
-
-//cargar pagina con 
+//funcion barra buscadora
 searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
 
@@ -82,7 +36,7 @@ searchBar.addEventListener('keyup', (e) => {
     displayCharacters(filteredCharacters);
 });
 
-
+//funcion que filtra los datos ingresados de la barra buscadora
 const displayCharacters = (filteredCharacters) => {
     const htmlString = filteredCharacters
         .map((filteredCharacters) => {
@@ -100,33 +54,10 @@ const displayCharacters = (filteredCharacters) => {
         .join('');
     courses.innerHTML = htmlString;
 };
-
+//llamado a la funcion para completar incialmente el html con el array de datos
 displayCharacters(courseData);
 
 
-
-
-
-
-/*function generateContent () {
-    for (const generate of courseData) {
-    let row = document.createElement('div');
-    row.className = "col"
-    row.innerHTML = `
-            <div class="card">
-                <img src="${generate.img}" class="card-img-top">
-                <div class="card-body">
-                    <h4>${generate.name}</h4>
-                    <p class="cardDesc">${generate.desc}</p>
-                    <p class="price">5000<span class="u-pull-right ">${generate.price}</span></p>
-                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${generate.id}>Add to Cart</a>
-                </div>
-            </div>`;
-        rowJs.appendChild(row);
-    }
-}
-generateContent();
-*/
 //funcion comprar curso
 function buyCourse(e) {
     e.preventDefault();
@@ -145,8 +76,7 @@ function getCourseInfo(course) {
         title: course.querySelector('h4').textContent,
         price: parseInt( course.querySelector('.price span').textContent),
         id: course.querySelector('a').getAttribute('data-id')
-    }
-    
+    }   
     //agregar en el carrito
     addIntoCart(courseInfo);
 }
@@ -168,8 +98,7 @@ function addIntoCart(course) {
         //agregar en local storage
         saveIntoStorage(course);
         //llamar a funcion de sumar total del carrito
-        sumTotal(course);
-        
+        sumTotal(course);     
 }
 
 function sumTotal (course) {
@@ -191,8 +120,7 @@ function sumTotal (course) {
          row.innerHTML = `
                 <h4>Total: ${sumado}</h4> `;
                 total.appendChild(row);
-        
-        }
+                }
 
 //agregando los cursos en localStorage
 function saveIntoStorage(course) {
@@ -201,7 +129,6 @@ function saveIntoStorage(course) {
     courses.push(course);
     
     localStorage.setItem('courses', JSON.stringify(courses) );
-    
 }
 
 function getCoursesFromStorage(){
@@ -273,7 +200,6 @@ function getFromLocalStorage() {
     coursesLS.forEach(function(course) {
         //crear la tabla
         const row = document.createElement('tr')
-
         row.innerHTML =`
             <tr>
                 <td>
