@@ -1,11 +1,56 @@
 const courses = document.querySelector('#courses-list'),
+    courses2 = document.querySelector('#courses-list2'),
     total = document.querySelector('#total'),
     shoppingCartContent = document.querySelector('#cart-content tbody'),
     clearCartBtn = document.querySelector('#clear-cart'),
-    rowJs = document.querySelector('#rowJs');
+    rowJs = document.querySelector('#courses-list'),
+    searchBar = document.querySelector('#searchBar'),
+    resultado = document.querySelector('#filtrado'),
+    boton = document.querySelector('#boton'),
+    clcard = document.querySelector('.card'),
+    charactersList = document.querySelector('#charactersList');
 
     //CREAMOS LOS LISTENERS
 loadEventListeners();
+
+
+
+
+/*const filtrar = ()=> {
+    console.log(formulario.value);
+    const texto = formulario.value.toLowerCase();
+    console.log(texto);
+    console.log(typeof texto);
+    
+    if (texto == undefined) {
+        generateContent();
+
+
+
+    } else {
+            
+    for(let curso of courseData) {
+        let nombre = curso.name.toLocaleLowerCase();
+        if(nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML +=
+            `<div class="card">
+                <img src="${curso.img}" class="card-img-top">
+                <div class="card-body">
+                    <h4>${curso.name}</h4>
+                    <p class="cardDesc">${curso.desc}</p>
+                    <p class="price">5000<span class="u-pull-right ">${curso.price}</span></p>
+                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${curso.id}>Add to Cart</a>
+                </div>
+            </div>`
+            
+        }
+    }
+    }
+}
+*/
+
+/* boton.addEventListener('click', filtrar); */
+
 
 function loadEventListeners () {
     //comprar curso
@@ -14,6 +59,7 @@ function loadEventListeners () {
     shoppingCartContent.addEventListener('click', removeCourse);
     //limpiar carrito
     clearCartBtn.addEventListener('click', clearCart);
+    
     //domcargado
     document.addEventListener('DOMContentLoaded', getFromLocalStorage);   
     
@@ -23,24 +69,64 @@ function loadEventListeners () {
 
 
 //cargar pagina con 
-function generateContent () {
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+
+    const filteredCharacters = courseData.filter((character) => {
+        return (
+            character.name.toLowerCase().includes(searchString)
+            
+        );
+    });
+    console.log(filteredCharacters);
+    displayCharacters(filteredCharacters);
+});
+
+
+const displayCharacters = (filteredCharacters) => {
+    const htmlString = filteredCharacters
+        .map((filteredCharacters) => {
+            return `
+            <div class="card">
+                <img src="${filteredCharacters.img}" class="card-img-top">
+                <div class="card-body">
+                    <h4>${filteredCharacters.name}</h4>
+                    <p class="cardDesc">${filteredCharacters.desc}</p>
+                    <p class="price">5000<span class="u-pull-right ">${filteredCharacters.price}</span></p>
+                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${filteredCharacters.id}>Add to Cart</a>
+                </div>
+            </div>`;
+        })
+        .join('');
+    courses.innerHTML = htmlString;
+};
+
+displayCharacters(courseData);
+
+
+
+
+
+
+/*function generateContent () {
     for (const generate of courseData) {
     let row = document.createElement('div');
-    row.className = "four columns"
+    row.className = "col"
     row.innerHTML = `
-        <div class="card">
-            <img src="${generate.img}" class="course-image u-full-width">
-            <div class="info-card">
-                <h4>${generate.name}</h4>
-                <p class="price">5000<span class="u-pull-right ">${generate.price}</span></p>
-                <a href="#" class="u-full-width button-primary button input add-to-cart" data-id=${generate.id}>Add to Cart</a>
-            </div>
-        </div> `;
+            <div class="card">
+                <img src="${generate.img}" class="card-img-top">
+                <div class="card-body">
+                    <h4>${generate.name}</h4>
+                    <p class="cardDesc">${generate.desc}</p>
+                    <p class="price">5000<span class="u-pull-right ">${generate.price}</span></p>
+                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${generate.id}>Add to Cart</a>
+                </div>
+            </div>`;
         rowJs.appendChild(row);
     }
 }
 generateContent();
-
+*/
 //funcion comprar curso
 function buyCourse(e) {
     e.preventDefault();
