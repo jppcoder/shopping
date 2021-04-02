@@ -53,7 +53,7 @@ const displayCharacters = (filteredCharacters) => {
                     <h4>${filteredCharacters.name}</h4>
                     <p class="cardDesc">${filteredCharacters.desc}</p>
                     <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
-                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${filteredCharacters.id}>Agregar al carro</a>
+                    <a href="#" class="btn  input add-to-cart infoContButton" data-id=${filteredCharacters.id}>Agregar al carro</a>
                 </div>
             </div>
             </div>`;

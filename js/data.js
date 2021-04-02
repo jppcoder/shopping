@@ -21,7 +21,7 @@ let courseData = [{
     "name": "Biodescodificacion",
     "desc": "Curso de: Snsectetur a et deleniti consectetur incidunt iste voluptates? Esse voluptatem, corrupti quam praesentium molestiae veritatis quod deserunt minima eum modi quidem amet!",
     "price": 1800,
-    "img": "./assets/images/bio.jpg"
+    "img": "./assets/images/curso4.png"
   },{
     "id": 5,
     "name": "Coaching",

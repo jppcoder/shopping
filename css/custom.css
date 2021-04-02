@@ -3,6 +3,9 @@ body {
     padding: 0;
 }
 
+a {
+  font-size: 1.5rem;
+}
 
 #wrapper {
     overflow-x: hidden;
@@ -23,16 +26,24 @@ body {
 #sidebar-wrapper .sidebar-heading {
   padding: 1.5rem 1.25rem;
   font-size: 2rem;
-  width: 3rem;
+  width: 3.5rem;
 }
 
 #sidebar-wrapper .list-group {
-  width: 3rem;
+  width: 3.5rem;
 }
 
 #page-content-wrapper {
   min-width: 100vw;
 }
+.infoCont {
+  color: #00695c;
+}
+.infoContButton {
+  color: white;
+  background-color: #296661;
+}
+
 
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
