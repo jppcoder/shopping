@@ -19,7 +19,7 @@ function loadEventListeners () {
         //domcargado
     document.addEventListener('DOMContentLoaded', getFromLocalStorage);   
 }
-
+//funcion para ocultar y mostrar el menu lateral con jquery
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
@@ -53,7 +53,7 @@ const displayCharacters = (filteredCharacters) => {
                     <h4>${filteredCharacters.name}</h4>
                     <p class="cardDesc">${filteredCharacters.desc}</p>
                     <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
-                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${filteredCharacters.id}>Add to Cart</a>
+                    <a href="#" class="btn btn-primary input add-to-cart" data-id=${filteredCharacters.id}>Agregar al carro</a>
                 </div>
             </div>
             </div>`;
@@ -126,7 +126,7 @@ function sumTotal (course) {
         //creando la etiqueta de suma
         const row = document.createElement('div');
                 row.innerHTML = `
-                <h3 class="sumado">Total: $ ${sumado}.00 Ars</h3> `;
+                <h5 class="sumado">Total: $ ${sumado}.00 Ars</h5> `;
                 total.appendChild(row);
                 }
 

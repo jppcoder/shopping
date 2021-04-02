@@ -38,6 +38,14 @@ body {
   margin-left: 0;
   display: none;
 }  
+#hero {
+  background-image:url(../assets/images/header.jpg);
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
 
 @media (min-width: 768px) {
     #sidebar-wrapper {
@@ -48,8 +56,11 @@ body {
     min-width: 0;
     width: 100%;
     }
-
-   
+    #hero {
+      
+      height: 400px;
+      
+    }
 }
 
 
@@ -70,11 +81,4 @@ header {
 
 ul {
     list-style: none;
-}
-#hero {
-    background-image:url(../assets/images/hero2.jpg);
-    height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
 }
