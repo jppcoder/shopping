@@ -34,7 +34,7 @@ ul {
     list-style: none;
 }
 #hero {
-    background-image:url(../img/landing-wide.jpg);
+    background-image:url(../assets/images/hero.jpg);
     height: 200px;
     background-size: cover;
     background-repeat: no-repeat;

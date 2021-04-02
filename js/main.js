@@ -41,14 +41,16 @@ const displayCharacters = (filteredCharacters) => {
     const htmlString = filteredCharacters
         .map((filteredCharacters) => {
             return `
+            <div class="col mb-5">
             <div class="card">
                 <img src="${filteredCharacters.img}" class="card-img-top">
                 <div class="card-body">
                     <h4>${filteredCharacters.name}</h4>
                     <p class="cardDesc">${filteredCharacters.desc}</p>
-                    <p class="price">5000<span class="u-pull-right ">${filteredCharacters.price}</span></p>
+                    <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
                     <a href="#" class="btn btn-primary input add-to-cart" data-id=${filteredCharacters.id}>Add to Cart</a>
                 </div>
+            </div>
             </div>`;
         })
         .join('');
@@ -169,9 +171,9 @@ function removeCourseLocalStorage(id) {
 
     // iterando el array para comparar con el id obtenido el selector para eliminar el objeto del array
     coursesLS.forEach(function(courseLS, index) {
-         if(courseLS.id === id) {
-              coursesLS.splice(index, 1);
-         }
+        if(courseLS.id === id) {
+            coursesLS.splice(index, 1);
+        }
     });
 
     // agregar el resto del array al localstorage
@@ -182,7 +184,7 @@ function removeCourseLocalStorage(id) {
 
 //funcion que vacia el carrito completamente
 function clearCart (e) {
-      
+    
     while (shoppingCartContent.firstChild) {
         shoppingCartContent.removeChild (shoppingCartContent.firstChild);
         
@@ -190,8 +192,8 @@ function clearCart (e) {
     while (total.firstChild) {
         total.removeChild (total.firstChild);
         
-    }
-
+    }   
+    localStorage.removeItem('courses');
 }
 //genera nuevamente el carrito luego de eliminar algun item de la lista
 function getFromLocalStorage() {
@@ -211,7 +213,6 @@ function getFromLocalStorage() {
                     <a href="#" class="remove" data-id="${course.id}">X</a>
                 </td>
             </tr> `;
-
         shoppingCartContent.appendChild(row);
     });
 }
