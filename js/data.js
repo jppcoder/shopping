@@ -3,13 +3,13 @@ let courseData = [{
     "name": "Neurociencias",
     "desc": "Curso de: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure libero et deleniti consectetur incidunt iste voluptates? Esse voluptatem, corrupti quam praesentium molestiae veritatis quod deserunt minima eum modi quidem amet!",
     "price": 500,
-    "img": "./assets/images/neuro.jpg"
+    "img": "./assets/images/curso1.jpeg"
   }, {
     "id": 2,
     "name": "ProgramacionPNL",
     "desc": "Curso de: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure libero et deleniti consectetur incidunt iste voluptates? Esse voluptatem, corrupti quam praesentium molestiae veritatis quod deserunt minima eum modi quidem amet!",
     "price": 900,
-    "img":"./assets/images/pnl.jpg"
+    "img":"./assets/images/curso2.jpeg"
   }, {
     "id": 3,
     "name": "Coaching",
