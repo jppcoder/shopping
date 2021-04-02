@@ -20,6 +20,11 @@ function loadEventListeners () {
     document.addEventListener('DOMContentLoaded', getFromLocalStorage);   
 }
 
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
 //CREAMOS LAS FUNCIONES A UTILIZAR
 
 //funcion barra buscadora
@@ -85,15 +90,16 @@ function getCourseInfo(course) {
 
 function addIntoCart(course) {
     const row = document.createElement('tr');
+    row.classList = "rowlist p-3 m-3";
     row.innerHTML = `
         <tr>
             <td>
                 <img src="${course.image}" width=100>
             </td>
             <td>${course.title}</td>
-            <td>${course.price}</td>
+            <td>$ ${course.price}.00 Ars</td>
             <td>
-                <a href="#" class="remove" data-id="${course.id}">X</a>
+                <a href="#" class="remove bi bi-dash-circle" data-id="${course.id}"></a>
             </td>
         </tr> `;
         shoppingCartContent.appendChild(row);
@@ -119,8 +125,8 @@ function sumTotal (course) {
         }
         //creando la etiqueta de suma
         const row = document.createElement('div');
-         row.innerHTML = `
-                <h4>Total: ${sumado}</h4> `;
+                row.innerHTML = `
+                <h3 class="sumado">Total: $ ${sumado}.00 Ars</h3> `;
                 total.appendChild(row);
                 }
 
@@ -202,15 +208,16 @@ function getFromLocalStorage() {
     coursesLS.forEach(function(course) {
         //crear la tabla
         const row = document.createElement('tr')
+        row.classList = "col";
         row.innerHTML =`
             <tr>
                 <td>
                     <img src="${course.image}" width=100>
                 </td>
                 <td>${course.title}</td>
-                <td>${course.price}</td>
+                <td>$ ${course.price}.00 Ars</td>
                 <td>
-                    <a href="#" class="remove" data-id="${course.id}">X</a>
+                    <a href="#" class="remove bi bi-dash-circle" data-id="${course.id}"></a>
                 </td>
             </tr> `;
         shoppingCartContent.appendChild(row);

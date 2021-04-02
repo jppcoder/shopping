@@ -2,13 +2,56 @@ body {
     margin: 0;
     padding: 0;
 }
-h1 {
-    text-align: center;
+
+#wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
 }
-h4 {
-    font-size: 14px;
-    font-weight: 700;
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 1.5rem 1.25rem;
+  font-size: 2rem;
+  width: 3rem;
 }
+
+#sidebar-wrapper .list-group {
+  width: 3rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+
+
+
 header {
     padding: 20px 0 0 0;
     background: white;
@@ -17,16 +60,13 @@ header {
 .container {
     width: 75%;
 }
-#img-cart{
-    margin-right: -900px;
-}
-
+/*
+#menuBar { max-width: 30px;}
+*/
 .remove {
-    background-color: red;
-    border-radius: 50%;
     padding: 5px 10px;
     text-decoration: none;
-    color: white;
+    color: red;
     font-weight: bold;
 }
 
@@ -39,53 +79,4 @@ ul {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
-#heading {
-    margin: 30px 0;
-}
- .submenu {
-    position: relative;
-} 
-
-.submenu #shopping-cart{
-    display: none;
-}
-.submenu:hover #shopping-cart{
-    display: block;
-    position: absolute;
-    right:0;
-    top:100%;
-    z-index: 1;
-    background-color: white;
-    padding: 20px;
-    min-height: 400px;
-    min-width: 300px;
-}
-
-#courses-list .row {
-    margin-bottom:20px;
-}
-.add-to-cart {
-    margin:10px 0;
-}
-.card {
-    text-align: center;
-    border: 1px solid #e1e1e1;
-    background: white;
-}
-.cardDesc {
-    min-height: 200px;
-}
-
-.info-card p,
-.card h4 {
-    margin-bottom: 5px;
-}
-.info-card .price {
-    font-size: 18px;
-    margin-top: 10px;
-}
-.info-card .price span {
-    font-weight: 700;
-    font-size: 22px;
 }
