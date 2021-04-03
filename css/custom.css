@@ -45,9 +45,6 @@ a {
 
 #sidebar-wrapper .sidebar-heading {
   margin-top: 12rem;
-  /*padding: 1.5rem 1.25rem;
-  font-size: 2rem;
-  width: 0;*/
 }
 
 #sidebar-wrapper .list-group {
@@ -72,8 +69,8 @@ a {
   display: none;
 }  
 #hero {
-  background-image:url(../assets/images/header.jpg);
-  height: 200px;
+  background-image:url(../assets/images/header3.jpg);
+  height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -132,7 +129,7 @@ a {
     }
     #hero {
       
-      height: 400px;
+      height: 600px;
       
     }
 }
