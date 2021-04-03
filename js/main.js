@@ -224,7 +224,7 @@ function getFromLocalStorage() {
     });
 }
 
-/* scrolling function */
+/* Inicio de funciones scrolling */
 window.addEventListener('scroll', ()=> {
     let content = document.querySelector('.scroll');
     let contentPosition = content.getBoundingClientRect().top;
@@ -260,7 +260,6 @@ window.addEventListener('scroll', ()=> {
         content.classList.remove('active')
     }
 });
-
 window.addEventListener('scroll', ()=> {
     let content = document.querySelector('.scroll4');
     let contentPosition = content.getBoundingClientRect().top;

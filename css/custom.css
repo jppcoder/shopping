@@ -134,6 +134,7 @@ a {
 
 
 
+/* media query para pantallas mayoraes a 768px */
 
 @media (min-width: 768px) {
     #sidebar-wrapper {

@@ -24,7 +24,7 @@ let courseData = [{
     "img": "./assets/images/curso4.jpg"
   },{
     "id": 5,
-    "name": "Coaching",
+    "name": "Coaching ontologico",
     "desc": "Curso de: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure libero et deleniti consectetur incidunt iste voluptates? Esse voluptatem, corrupti quam praesentium molestiae veritatis quod deserunt minima eum modi quidem amet!",
     "price": 1500,
     "img": "./assets/images/coach.jpg"
