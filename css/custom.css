@@ -1,3 +1,23 @@
+/* CSS Variables */ 
+
+:root{
+  --primary-color: #4458dc;
+  --primary-color2: #854fee;
+  --title-color: #141313;
+  --text-color: #777777;  
+  --border-color: #201f1f17;  
+  --gradient-color: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  --shadow-color:  0px 10px 30px rgba(118, 85, 225, 0.3);
+  --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+ 
+
+  /* font family variables. */ 
+  --roboto: 'Roboto', cursive;
+} 
+/* import fonts from fonts.css file */ 
+@import url(./fonts.css);
+
+
 body {
     margin: 0;
     padding: 0;
@@ -56,6 +76,47 @@ a {
   background-repeat: no-repeat;
   background-position: top;
 }
+
+#footer {
+  background-image:url(../assets/images/footerbg.png);
+  height:350px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:top;
+}
+
+/* Services Area */ 
+
+.services-area{
+  padding: 7rem 2rem;
+}
+
+.services-area .services-title{
+  padding: 0 14rem;
+}
+
+.services-area .services-title h1{
+  font-size: 35px;
+}
+
+.services-area .services{
+  background: rgba(248, 252, 253, 0.973);
+  padding: 2rem 0;
+  width: 16rem;
+  margin: 5rem .5rem;
+  transition: box-shadow .7s ease;
+}
+
+.services-area .services:hover{
+  box-shadow: var(--box-shadow);
+}
+
+
+
+/* End Services Area */ 
+
+
+
 
 
 @media (min-width: 768px) {
