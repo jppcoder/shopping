@@ -63,7 +63,9 @@ a {
   color: white;
   background-color: #296661;
 }
-
+.searchBar, .services-area, .coursesCard {
+  overflow: hidden;
+}
 
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
@@ -85,23 +87,7 @@ a {
   background-position:top;
 }
 
-/* scrolling */
 
-.scroll, .scroll2, .scroll3, .scroll4, .scroll5{
-  
-  opacity: 0;
-  transform: scale(0.1);
-  transition: all 1s ease-in-out;
-}
-
-
-.active {
-  opacity: 1;
-  transform:scale(1);
-}
-
-
-/* servicios ofrecidos  */ 
 
 .services-list{
   padding: 7rem 2rem;

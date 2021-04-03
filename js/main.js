@@ -1,3 +1,6 @@
+
+
+//creando constantes
 const courses = document.querySelector('#courses-list'),
     total = document.querySelector('#total'),
     shoppingCartContent = document.querySelector('#cart-content tbody'),
@@ -46,8 +49,8 @@ const displayCharacters = (filteredCharacters) => {
     const htmlString = filteredCharacters
         .map((filteredCharacters) => {
             return `
-            <div class="col mb-5">
-            <div class="card">
+            <div class="col mb-5" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500">
+            <div class="card coursesCard">
                 <img src="${filteredCharacters.img}" class="card-img-top">
                 <div class="card-body">
                     <h4>${filteredCharacters.name}</h4>
@@ -224,61 +227,3 @@ function getFromLocalStorage() {
     });
 }
 
-/* Inicio de funciones scrolling */
-window.addEventListener('scroll', ()=> {
-    let content = document.querySelector('.scroll');
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight;
-    if(contentPosition < screenPosition) {
-        content.classList.add('active');
-
-    } else{
-        content.classList.remove('active')
-    }
-});
-
-window.addEventListener('scroll', ()=> {
-    let content = document.querySelector('.scroll2');
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight;
-    if(contentPosition < screenPosition) {
-        content.classList.add('active');
-
-    } else{
-        content.classList.remove('active')
-    }
-});
-
-window.addEventListener('scroll', ()=> {
-    let content = document.querySelector('.scroll3');
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight;
-    if(contentPosition < screenPosition) {
-        content.classList.add('active');
-
-    } else{
-        content.classList.remove('active')
-    }
-});
-window.addEventListener('scroll', ()=> {
-    let content = document.querySelector('.scroll4');
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight;
-    if(contentPosition < screenPosition) {
-        content.classList.add('active');
-
-    } else{
-        content.classList.remove('active')
-    }
-});
-window.addEventListener('scroll', ()=> {
-    let content = document.querySelector('.scroll5');
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1;
-    if(contentPosition < screenPosition) {
-        content.classList.add('active');
-
-    } else{
-        content.classList.remove('active')
-    }
-});
