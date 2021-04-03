@@ -17,6 +17,7 @@
 /* import fonts from fonts.css file */ 
 @import url(./fonts.css);
 
+/* fin de variables e imports */
 
 body {
     margin: 0;
@@ -84,21 +85,37 @@ a {
   background-position:top;
 }
 
-/* Services Area */ 
+/* scrolling */
 
-.services-area{
+.scroll, .scroll2, .scroll3, .scroll4, .scroll5{
+  
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 1s ease-in-out;
+}
+
+
+.active {
+  opacity: 1;
+  transform:scale(1);
+}
+
+
+/* servicios ofrecidos  */ 
+
+.services-list{
   padding: 7rem 2rem;
 }
 
-.services-area .services-title{
+.services-list .services-title{
   padding: 0 14rem;
 }
 
-.services-area .services-title h1{
+.services-list .services-title h1{
   font-size: 35px;
 }
 
-.services-area .services{
+.services-list.services{
   background: rgba(248, 252, 253, 0.973);
   padding: 2rem 0;
   width: 16rem;
@@ -106,13 +123,13 @@ a {
   transition: box-shadow .7s ease;
 }
 
-.services-area .services:hover{
+.services-list .services:hover{
   box-shadow: var(--box-shadow);
 }
 
 
 
-/* End Services Area */ 
+/* fin servicios ofrecidos */ 
 
 
 
