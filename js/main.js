@@ -49,7 +49,7 @@ const displayCharacters = (filteredCharacters) => {
     const htmlString = filteredCharacters
         .map((filteredCharacters) => {
             return `
-            <div class="col mb-5" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500">
+            <div class="col mb-5" data-aos="fade-down" data-aos-delay="100" data-aos-duration="50">
             <div class="card coursesCard">
                 <img src="${filteredCharacters.img}" class="card-img-top">
                 <div class="card-body">

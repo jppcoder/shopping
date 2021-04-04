@@ -1,9 +1,9 @@
 /* CSS Variables */ 
 
 :root{
-  --primary-color: #4458dc;
-  --primary-color2: #854fee;
-  --title-color: #141313;
+  --primary-color: #3a7e80;
+  --primary-color2: #00695c;
+  --title-color: #18ffff;
   --text-color: #777777;  
   --border-color: #201f1f17;  
   --gradient-color: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
@@ -80,14 +80,21 @@ a {
 }
 
 #footer {
-  background-image:url(../assets/images/footer.png);
+  background-image:url(../assets/images/footerbg.png);
   height:350px;
   background-size:cover;
   background-repeat: no-repeat;
   background-position:top;
 }
 
+.services { 
+  background-color: var(--title-color);
+  min-height: 300px;
+}
 
+.imgLuciana {
+  background-color:var(--title-color)
+}
 
 .services-list{
   padding: 7rem 2rem;
