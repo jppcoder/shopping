@@ -3,10 +3,10 @@
 :root{
   --primary-color: #3a7e80;
   --primary-color2: #00695c;
+  --background-color: #ebebeb;
   --title-color: #18ffff;
   --text-color: #777777;  
   --border-color: #201f1f17;  
-  --gradient-color: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
   --shadow-color:  0px 10px 30px rgba(118, 85, 225, 0.3);
   --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
  
@@ -79,6 +79,7 @@ a {
   background-position: top;
 }
 
+
 #footer {
   background-image:url(../assets/images/footerbg.png);
   height:350px;
@@ -94,6 +95,10 @@ a {
 
 .imgLuciana {
   background-color:var(--title-color)
+}
+
+.cv {
+  box-shadow: var(--box-shadow);
 }
 
 .services-list{
