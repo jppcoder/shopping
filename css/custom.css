@@ -30,6 +30,9 @@ a {
   font-size: 1.5rem;
   
 }
+h4 {
+  font-size: 2.5rem;
+}
 
 #wrapper {
     overflow-x: hidden;
@@ -54,6 +57,9 @@ a {
 #sidebar-wrapper .list-group {
   width: 3.5rem;
   
+}
+#menu-toggle {
+  width: 3.5rem;
 }
 
 #page-content-wrapper {
@@ -130,13 +136,13 @@ a {
 }
 .menuItem {
   box-shadow: var(--box-shadow);
-  color: #1F4287;
+  color: var(--azul);
 }
 .menuItem:first-child {
-  color: var(--primary-color2)
+  color: var(--primary-color2);
 }
 .menuItem:nth-child(2) {
-  color: #FF66C4;
+  color: var(--rosa);
 }
 .menuItem :last-child {
   color: var(--primary-color);

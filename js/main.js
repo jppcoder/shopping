@@ -6,11 +6,12 @@ const courses = document.querySelector('#courses-list'),
     rowJs = document.querySelector('#courses-list'),
     searchBar = document.querySelector('#searchBar'),
     charactersList = document.querySelector('#charactersList'),
-    toast = document.querySelector('#liveToast');
+    toast = document.querySelector('#liveToast'),
+    toggled = document.querySelector('#wrapper');
 
     //Creamos los listeners
 loadEventListeners();
-
+menuState();
 function loadEventListeners () {
     //comprar curso
     courses.addEventListener('click', buyCourse);
@@ -19,7 +20,8 @@ function loadEventListeners () {
     //limpiar carrito
     clearCartBtn.addEventListener('click', clearCart);
         //domcargado
-    document.addEventListener('DOMContentLoaded', getFromLocalStorage);   
+    document.addEventListener('DOMContentLoaded', getFromLocalStorage); 
+
 }
 //funcion para ocultar y mostrar el menu lateral con jquery
 $("#menu-toggle").click(function(e) {
@@ -217,14 +219,14 @@ function getFromLocalStorage() {
     });
 }
 
-function buyMessage (course) { 
-    console.log(course.name)
-    console.log(courseData.name)
-}
-
+//funcion para mostrar el mensaje Toast al ralizar una click en agregar al carrito
 function buyMessage(course) {
     toast.className = "toast show";
     setTimeout(function(){
         toast.className = "toast hide";
     },3000) 
+}
+//funcion para que cargue la pagina con el menu oculto
+function menuState () { 
+    toggled.className = "d-flex toggled"
 }
