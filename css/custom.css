@@ -4,6 +4,8 @@
   --primary-color: #3a7e80;
   --primary-color2: #00695c;
   --background-color: #ebebeb;
+  --azul: #1F4287;
+  --rosa: #FF66C4;
   --title-color: #18ffff;
   --text-color: #777777;  
   --border-color: #201f1f17;  
@@ -26,6 +28,7 @@ body {
 
 a {
   font-size: 1.5rem;
+  
 }
 
 #wrapper {
@@ -41,7 +44,7 @@ a {
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
-  background-color: red;
+  
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -61,7 +64,7 @@ a {
 }
 .infoContButton {
   color: white;
-  background-color: #296661;
+  background-color:var(--azul);
 }
 .searchBar, .services-area, .coursesCard {
   overflow: hidden;
@@ -70,6 +73,7 @@ a {
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
   display: none;
+ 
 }  
 #hero {
   background-image:url(../assets/images/header3.jpg);
@@ -124,9 +128,19 @@ a {
 .services-list .services:hover{
   box-shadow: var(--box-shadow);
 }
-
-
-
+.menuItem {
+  box-shadow: var(--box-shadow);
+  color: #1F4287;
+}
+.menuItem:first-child {
+  color: var(--primary-color2)
+}
+.menuItem:nth-child(2) {
+  color: #FF66C4;
+}
+.menuItem :last-child {
+  color: var(--primary-color);
+}
 /* fin servicios ofrecidos */ 
 
 

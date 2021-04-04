@@ -1,5 +1,3 @@
-
-
 //creando constantes
 const courses = document.querySelector('#courses-list'),
     total = document.querySelector('#total'),
@@ -7,9 +5,10 @@ const courses = document.querySelector('#courses-list'),
     clearCartBtn = document.querySelector('#clear-cart'),
     rowJs = document.querySelector('#courses-list'),
     searchBar = document.querySelector('#searchBar'),
-    charactersList = document.querySelector('#charactersList');
+    charactersList = document.querySelector('#charactersList'),
+    toast = document.querySelector('#liveToast');
 
-    //CREAMOS LOS LISTENERS
+    //Creamos los listeners
 loadEventListeners();
 
 function loadEventListeners () {
@@ -28,12 +27,11 @@ $("#menu-toggle").click(function(e) {
     $("#wrapper").toggleClass("toggled");
   });
 
-//CREAMOS LAS FUNCIONES A UTILIZAR
+//Funciones
 
 //funcion barra buscadora
 searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
-
     const filteredCharacters = courseData.filter((character) => {
         return (
             character.name.toLowerCase().includes(searchString)
@@ -50,15 +48,15 @@ const displayCharacters = (filteredCharacters) => {
         .map((filteredCharacters) => {
             return `
             <div class="col mb-5" data-aos="fade-down" data-aos-delay="100" data-aos-duration="50">
-            <div class="card coursesCard">
-                <img src="${filteredCharacters.img}" class="card-img-top">
-                <div class="card-body">
-                    <h4>${filteredCharacters.name}</h4>
-                    <p class="cardDesc">${filteredCharacters.desc}</p>
-                    <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
-                    <a href="#" class="btn  input add-to-cart infoContButton" data-id=${filteredCharacters.id}>Agregar al carro</a>
+                <div class="card coursesCard">
+                    <img src="${filteredCharacters.img}" class="card-img-top">
+                    <div class="card-body">
+                        <h4>${filteredCharacters.name}</h4>
+                        <p class="cardDesc">${filteredCharacters.desc}</p>
+                        <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
+                        <a href="#"  class="btn input add-to-cart infoContButton" data-id=${filteredCharacters.id}>Agregar al carro</a>
+                    </div>
                 </div>
-            </div>
             </div>`;
         })
         .join('');
@@ -71,11 +69,10 @@ displayCharacters(courseData);
 //funcion comprar curso
 function buyCourse(e) {
     e.preventDefault();
-    
     if (e.target.classList.contains('add-to-cart')) {
-        
         const course = e.target.parentElement.parentElement;
         getCourseInfo(course);
+        
     }
 }
 
@@ -89,6 +86,7 @@ function getCourseInfo(course) {
     }   
     //agregar en el carrito
     addIntoCart(courseInfo);
+    buyMessage(courseInfo);
 }
 
 function addIntoCart(course) {
@@ -109,7 +107,8 @@ function addIntoCart(course) {
         //agregar en local storage
         saveIntoStorage(course);
         //llamar a funcion de sumar total del carrito
-        sumTotal(course);     
+        sumTotal(course);
+            
 }
 
 function sumTotal (course) {
@@ -123,8 +122,8 @@ function sumTotal (course) {
         
         //creando la etiqueta en el carrito del Total, limpiando previamente si existe algun dato, para evitar sumas duplicadas
         var div = document.getElementById('total');
-         while(div.firstChild){ 
-             div.removeChild(div.firstChild); 
+            while(div.firstChild){ 
+            div.removeChild(div.firstChild); 
         }
         //creando la etiqueta de suma
         const row = document.createElement('div');
@@ -136,9 +135,7 @@ function sumTotal (course) {
 //agregando los cursos en localStorage
 function saveIntoStorage(course) {
     let courses = getCoursesFromStorage();
-    
     courses.push(course);
-    
     localStorage.setItem('courses', JSON.stringify(courses) );
 }
 
@@ -148,14 +145,10 @@ function getCoursesFromStorage(){
     // si existe algo previo, obtenemos el valor o limpiamos el array
     if (localStorage.getItem('courses') === null) {
         courses = [];
-        
     } else {
         courses = JSON.parse(localStorage.getItem('courses'));
-        
     }
     return courses;
-    
-    
 }
     
 // remover curso del DOM
@@ -175,7 +168,7 @@ function removeCourse(e) {
 
 // removiendo curso del localstorage
 function removeCourseLocalStorage(id) {
-    // get the local storage data
+    // obtenemos la informacion de localstorage
     let coursesLS = getCoursesFromStorage();
 
     // iterando el array para comparar con el id obtenido el selector para eliminar el objeto del array
@@ -193,12 +186,9 @@ function removeCourseLocalStorage(id) {
 
 //funcion que vacia el carrito completamente
 function clearCart (e) {
-    
     while (shoppingCartContent.firstChild) {
-        shoppingCartContent.removeChild (shoppingCartContent.firstChild);
-        
-    }
-    while (total.firstChild) {
+        shoppingCartContent.removeChild (shoppingCartContent.firstChild); 
+    }while (total.firstChild) {
         total.removeChild (total.firstChild);
         
     }   
@@ -227,3 +217,14 @@ function getFromLocalStorage() {
     });
 }
 
+function buyMessage (course) { 
+    console.log(course.name)
+    console.log(courseData.name)
+}
+
+function buyMessage(course) {
+    toast.className = "toast show";
+    setTimeout(function(){
+        toast.className = "toast hide";
+    },3000) 
+}
