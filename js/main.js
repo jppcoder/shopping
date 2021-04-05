@@ -100,7 +100,7 @@ function addIntoCart(course) {
             <td>
                 <img src="${course.image}" class="cartImg">
             </td>
-            <td class="text-capitalize">${course.title}</td>
+            <td>${course.title}</td>
             <td>$ ${course.price}.00 Ars</td>
             <td>
                 <a href="#" class="remove bi bi-dash-circle" data-id="${course.id}"></a>

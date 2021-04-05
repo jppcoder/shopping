@@ -112,9 +112,11 @@ header {
 
 .coursesCard {
   min-height: 700px;
-  
 }
-
+.price {
+  font-size: 1.5rem;
+  color: var(--azul)
+}
  
 
 
@@ -136,9 +138,12 @@ header {
 }
 .cv {
   box-shadow: var(--box-shadow);
-
-/* configuracion area de servicios ofrecidos*/
 }
+/* configuracion area de servicios ofrecidos*/
+.services h2 {
+  font-size: 3rem;
+}
+
 .services-list{
   padding: 3rem 2rem;
 }

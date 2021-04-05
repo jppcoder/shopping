@@ -24,7 +24,7 @@ let courseData = [{
     "img": "./assets/images/curso4.jpeg"
   },{
     "id": 5,
-    "name": "Biodescodificacion",
+    "name": "Biodescodificación",
     "desc": "Herramienta que te va a permitir recodificar tus creencias para poder vivr en abundancia y crear lo que queres para vos, para tu vida y para tu trabajo.",
     "price": 11000,
     "img": "./assets/images/curso5.jpeg"
