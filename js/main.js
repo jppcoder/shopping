@@ -12,6 +12,7 @@ const courses = document.querySelector('#courses-list'),
     //Creamos los listeners
 loadEventListeners();
 menuState();
+
 function loadEventListeners () {
     //comprar curso
     courses.addEventListener('click', buyCourse);
@@ -40,7 +41,6 @@ searchBar.addEventListener('keyup', (e) => {
             
         );
     });
-    console.log(filteredCharacters);
     displayCharacters(filteredCharacters);
 });
 
@@ -53,10 +53,10 @@ const displayCharacters = (filteredCharacters) => {
                 <div class="card coursesCard">
                     <img src="${filteredCharacters.img}" class="card-img-top">
                     <div class="card-body">
-                        <h4>${filteredCharacters.name}</h4>
+                        <h3>${filteredCharacters.name}</h3>
                         <p class="cardDesc">${filteredCharacters.desc}</p>
                         <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
-                        <a href="#"  class="btn input add-to-cart infoContButton" data-id=${filteredCharacters.id}>Agregar al carro</a>
+                        <a href="#"  class="btn input add-to-cart infoContButton align-self-end" data-id=${filteredCharacters.id}>Agregar al carro</a>
                     </div>
                 </div>
             </div>`;
@@ -88,6 +88,7 @@ function getCourseInfo(course) {
     }   
     //agregar en el carrito
     addIntoCart(courseInfo);
+    //llamado al Toast de compra
     buyMessage(courseInfo);
 }
 

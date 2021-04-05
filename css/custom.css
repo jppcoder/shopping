@@ -76,6 +76,11 @@ h4 {
   overflow: hidden;
 }
 
+.coursesCard {
+  min-height: 700px;
+  
+}
+
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
   display: none;
