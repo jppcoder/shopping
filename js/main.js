@@ -53,7 +53,7 @@ const displayCharacters = (filteredCharacters) => {
                 <div class="card coursesCard">
                     <img src="${filteredCharacters.img}" class="card-img-top">
                     <div class="card-body">
-                        <h3>${filteredCharacters.name}</h3>
+                        <h3 class="text-capitalize">${filteredCharacters.name}</h3>
                         <p class="cardDesc">${filteredCharacters.desc}</p>
                         <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
                         <a href="#"  class="btn input add-to-cart infoContButton align-self-end" data-id=${filteredCharacters.id}>Agregar al carro</a>
@@ -82,7 +82,7 @@ function getCourseInfo(course) {
     //Objetos con info de los datos seleccionados
     const courseInfo = {
         image: course.querySelector('img').src,
-        title: course.querySelector('h4').textContent,
+        title: course.querySelector('h3').textContent,
         price: parseInt( course.querySelector('.price span').textContent),
         id: course.querySelector('a').getAttribute('data-id')
     }   
