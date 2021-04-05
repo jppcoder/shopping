@@ -168,8 +168,7 @@ function removeCourse(e) {
     }
     console.log(courseId);
     // remover de local storage
-    removeCourseLocalStorage(courseId);
-    
+    removeCourseLocalStorage(courseId); 
 }
 
 // removiendo curso del localstorage
@@ -237,8 +236,7 @@ function buyMessage(course) {
 function menuState () { 
     toggled.className = "d-flex toggled"
 }
-
-
+//funcion para agregar el badge con la cantidad en el menubar
 function badge () {
     let badged = JSON.parse(localStorage.getItem('courses'))
     let count = (badged.length)
@@ -246,12 +244,9 @@ function badge () {
     if  (badged == "[]") {
         span.innerHTML = ``;
         
-
     } else if ( badged !== null) {
-        span.innerHTML = `${count}`;
-        
-    }
-    
+        span.innerHTML = `${count}`;   
+    } 
     else { 
         span.innerHTML = ``;
     }
