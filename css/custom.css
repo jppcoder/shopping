@@ -119,9 +119,10 @@ header {
 }
 
 .badge {
-  margin-top: -40px;
+  margin-top: -49px;
   margin-left: 20px;
-
+  background-color: var(--rosa);
+  
 }
 
 

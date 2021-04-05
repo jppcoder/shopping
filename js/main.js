@@ -242,16 +242,17 @@ function menuState () {
 function badge () {
     let badged = JSON.parse(localStorage.getItem('courses'))
     let count = (badged.length)
-    
+    console.log(count);
     if  (badged == "[]") {
-        console.log("vacio");
         span.innerHTML = ``;
+        
 
     } else if ( badged !== null) {
-        console.log("No esta vacio");
         span.innerHTML = `${count}`;
-    } else { 
-        console.log("vacio");
+        
+    }
+    
+    else { 
         span.innerHTML = ``;
     }
 }
