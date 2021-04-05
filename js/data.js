@@ -7,7 +7,7 @@ let courseData = [{
   }, {
     "id": 2,
     "name": "alcanza tu sueño",
-    "desc": "Este programa esta diseñado para pensarse a largo plazo, para que puedas hacer un plan para los objetivos que tenes a 10 años. En los cuales te vas a quedar con herramientas para una fácil toma decisiones, para saber claramente cuales cosas están alineadas con tu plan y cuales no, herramientas hard sobre management de negocios en general y también un nivel de conocimiento de uno mismo que le permite ser ECOLOGICO con uno mismo",
+    "desc": "Este programa esta diseñado para pensarse a largo plazo, para que puedas hacer un plan para los objetivos que tenes a 10 años. En los cuales te vas a quedar con herramientas para una fácil toma decisiones, para saber claramente cuales cosas están alineadas con tu plan y cuales no, herramientas hard sobre management de negocios en general",
     "price": 900,
     "img":"./assets/images/curso2.jpeg"
   }, {

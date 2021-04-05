@@ -19,52 +19,79 @@
 /* import fonts from fonts.css file */ 
 @import url(./fonts.css);
 
-/* fin de variables e imports */
+/* configuraciones generales */
 
 body {
     margin: 0;
     padding: 0;
 }
-
+ul {
+  list-style: none;
+}
 a {
-  font-size: 1.5rem;
-  
+  font-size: 1.5rem; 
 }
 h4 {
   font-size: 2.5rem;
 }
-
+/* diseño del header */
+header {
+  padding: 20px 0 0 0;
+  background: white;
+  text-align: center;
+}
+#hero {
+  background-image:url(../assets/images/header3.jpg);
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+/* diseño principal del viewport */
 #wrapper {
     overflow-x: hidden;
- }
-
+}
 #sidebar-wrapper {
   min-height: 100vh;
   position: fixed;
   z-index: 100;
-  /*margin-left: -5rem;*/
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
-  
+  transition: margin .25s ease-out; 
 }
-
 #sidebar-wrapper .sidebar-heading {
   margin-top: 12rem;
 }
-
 #sidebar-wrapper .list-group {
   width: 3.5rem;
-  
 }
-#menu-toggle {
-  width: 3.5rem;
-}
-
 #page-content-wrapper {
   min-width: 100vw;
 }
+/* barra del menu */
+#menu-toggle {
+  width: 3.5rem;
+}
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+  display: none;
+} 
+.menuItem {
+  box-shadow: var(--box-shadow);
+  color: var(--azul);
+}
+.menuItem:first-child {
+  color: var(--primary-color2);
+}
+.menuItem:nth-child(2) {
+  color: var(--rosa);
+}
+.menuItem :last-child {
+  color: var(--primary-color);
+}
+
+/* carrito de compras */
 .infoCont {
   color: #00695c;
 }
@@ -72,6 +99,7 @@ h4 {
   color: white;
   background-color:var(--azul);
 }
+/* configuracion para animaciones */
 .searchBar, .services-area, .coursesCard {
   overflow: hidden;
 }
@@ -81,18 +109,7 @@ h4 {
   
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
-  display: none;
  
-}  
-#hero {
-  background-image:url(../assets/images/header3.jpg);
-  height: 500px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
 
 
 #footer {
@@ -107,27 +124,24 @@ h4 {
   background-color: var(--title-color);
   min-height: 300px;
 }
-
+ /* configuracion area de CV*/
 .imgLuciana {
   background-color:var(--title-color)
 }
-
 .cv {
   box-shadow: var(--box-shadow);
-}
 
+/* configuracion area de servicios ofrecidos*/
+}
 .services-list{
   padding: 7rem 2rem;
 }
-
 .services-list .services-title{
   padding: 0 14rem;
 }
-
 .services-list .services-title h1{
   font-size: 35px;
 }
-
 .services-list.services{
   background: rgba(248, 252, 253, 0.973);
   padding: 2rem 0;
@@ -135,27 +149,17 @@ h4 {
   margin: 5rem .5rem;
   transition: box-shadow .7s ease;
 }
-
 .services-list .services:hover{
   box-shadow: var(--box-shadow);
 }
-.menuItem {
-  box-shadow: var(--box-shadow);
-  color: var(--azul);
-}
-.menuItem:first-child {
-  color: var(--primary-color2);
-}
-.menuItem:nth-child(2) {
-  color: var(--rosa);
-}
-.menuItem :last-child {
-  color: var(--primary-color);
-}
-/* fin servicios ofrecidos */ 
 
-
-
+/* configuraciones de carrito */
+.remove {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
 
 /* media query para pantallas mayoraes a 768px */
 
@@ -175,22 +179,3 @@ h4 {
     }
 }
 
-
-
-
-header {
-    padding: 20px 0 0 0;
-    background: white;
-    text-align: center;
-}
-
-.remove {
-    padding: 5px 10px;
-    text-decoration: none;
-    color: red;
-    font-weight: bold;
-}
-
-ul {
-    list-style: none;
-}
