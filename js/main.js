@@ -98,9 +98,9 @@ function addIntoCart(course) {
     row.innerHTML = `
         <tr>
             <td>
-                <img src="${course.image}" width=100>
+                <img src="${course.image}" class="cartImg">
             </td>
-            <td>${course.title}</td>
+            <td class="text-capitalize">${course.title}</td>
             <td>$ ${course.price}.00 Ars</td>
             <td>
                 <a href="#" class="remove bi bi-dash-circle" data-id="${course.id}"></a>
@@ -208,9 +208,9 @@ function getFromLocalStorage() {
         row.innerHTML =`
             <tr>
                 <td>
-                    <img src="${course.image}" width=100>
+                    <img src="${course.image}" class="cartImg">
                 </td>
-                <td>${course.title}</td>
+                <td class="text-capitalize">${course.title}</td>
                 <td>$ ${course.price}.00 Ars</td>
                 <td>
                     <a href="#" class="remove bi bi-dash-circle" data-id="${course.id}"></a>

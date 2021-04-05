@@ -99,6 +99,12 @@ header {
   color: white;
   background-color:var(--azul);
 }
+.cartImg {
+  width: 50px;
+}
+.cartDescText{
+  text-align: center;
+}
 /* configuracion para animaciones */
 .searchBar, .services-area, .coursesCard {
   overflow: hidden;
@@ -175,7 +181,9 @@ header {
     #hero {
       
       height: 600px;
-      
+    }
+    .cartImg {
+      width: 100px;
     }
 }
 
