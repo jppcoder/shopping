@@ -7,7 +7,8 @@ const courses = document.querySelector('#courses-list'),
     searchBar = document.querySelector('#searchBar'),
     charactersList = document.querySelector('#charactersList'),
     toast = document.querySelector('#liveToast'),
-    toggled = document.querySelector('#wrapper');
+    toggled = document.querySelector('#wrapper'),
+    span = document.querySelector('#cartSpan');
 
     //Creamos los listeners
 loadEventListeners();
@@ -90,6 +91,7 @@ function getCourseInfo(course) {
     addIntoCart(courseInfo);
     //llamado al Toast de compra
     buyMessage(courseInfo);
+    badge();
 }
 
 function addIntoCart(course) {
@@ -167,6 +169,7 @@ function removeCourse(e) {
     console.log(courseId);
     // remover de local storage
     removeCourseLocalStorage(courseId);
+    
 }
 
 // removiendo curso del localstorage
@@ -179,12 +182,14 @@ function removeCourseLocalStorage(id) {
         if(courseLS.id === id) {
             coursesLS.splice(index, 1);
         }
+        
     });
 
     // agregar el resto del array al localstorage
     localStorage.setItem('courses', JSON.stringify(coursesLS));
     // llamar a la funcion suma de total de carrito
     sumTotal();
+    badge();
 }
 
 //funcion que vacia el carrito completamente
@@ -196,6 +201,7 @@ function clearCart (e) {
         
     }   
     localStorage.removeItem('courses');
+    badge();
 }
 //genera nuevamente el carrito luego de eliminar algun item de la lista
 function getFromLocalStorage() {
@@ -231,3 +237,25 @@ function buyMessage(course) {
 function menuState () { 
     toggled.className = "d-flex toggled"
 }
+
+
+function badge () {
+    let badged = JSON.parse(localStorage.getItem('courses'))
+    let count = (badged.length)
+    
+    if  (badged == "[]") {
+        console.log("vacio");
+        span.innerHTML = ``;
+
+    } else if ( badged !== null) {
+        console.log("No esta vacio");
+        span.innerHTML = `${count}`;
+    } else { 
+        console.log("vacio");
+        span.innerHTML = ``;
+    }
+}
+
+
+
+

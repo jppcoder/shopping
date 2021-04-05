@@ -26,7 +26,7 @@
             <div class="sidebar-heading"></div>
             <div class="list-group list-group-flush mt-3 position-fixed " id="menuBar">
                 <a href="#wrapper" class="fw-bold list-group-item list-group-item-action bg-light bi bi-house menuItem bg-transparent  rounded-circle mb-2 "></a>  
-                <a href="#" class="fw-bold list-group-item list-group-item-action bg-light bi bi-cart menuItem bg-transparent  rounded-circle mb-2" data-toggle="modal"  data-target="#exampleModal"></a>
+                <a href="#" class="fw-bold list-group-item list-group-item-action bg-light bi bi-cart menuItem bg-transparent  rounded-circle mb-2" data-toggle="modal"  data-target="#exampleModal"><span class="badge bg-danger position-fixed rounded-circle" id="cartSpan"></span></a>
                 <a href="#programsArea" class="fw-bold list-group-item list-group-item-action bg-light bi bi-book menuItem bg-transparent  rounded-circle mb-2 "></a>
                 <a href="#cvArea" class="fw-bold list-group-item list-group-item-action bg-light bi bi-file-person menuItem bg-transparent rounded-circle mb-2 "></a>
                 <a href="#footer" class="fw-bold list-group-item list-group-item-action bg-light bi bi-envelope-open menuItem bg-transparent  rounded-circle mb-2"></a>
@@ -50,11 +50,9 @@
                                 </thead>
                                 
                                 <tbody>
-
-                                </tbody>
-                                
+                                    <!-- se cargara el contenido generado desde Js --> 
+                                </tbody>    
                             </table>
-
                         </ul>
                         <div id="total" class="container text-center"></div>
                         <div class="modal-footer">
@@ -72,8 +70,6 @@
                 </div>
                 
                 <!--  ====================== Area de servicios ofrecidos =============================  -->
-                
-                
                 <div class="container services-area" data-aos="fade-up">
                     <div class="d-flex justify-content-center">
                         <div class="text-center services-titled justify-content-lg-center">
@@ -92,9 +88,7 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto infoCont">Potenciamos Talentos</h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                        Especialistas en detectar potenciales y explotarlos al máximo.
                                     </p>
                                 </div>
                             </div>
@@ -105,9 +99,7 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto infoCont">Diseñamos Futuro</h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                        Te ayudamos a planificar como queres que sea tu vida.
                                     </p>
                                 </div>
                             </div>
@@ -118,9 +110,7 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto infoCont">Herramientas para Crecer</h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                        Tenemos para brindarte un amplia variedad de herramientas para mejorar tus skills.
                                     </p>
                                 </div>
                             </div>
@@ -131,21 +121,14 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase font-roboto infoCont">Mentoring</h5>
                                     <p class="card-text text-secondary">
-                                        Some quick example text to build on the card
-                                        title and make up
-                                        the bulk of the card's content.
+                                        Te ayudamos en el proceso de evolución de tu Pyme para alcanzar tus objetivos.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                
                 <!--  /====================== Fin de area de servicios ofrecidos =============================  -->
-                
                 <!--  ====================== Inicio de buscador de cursos =============================  -->
                 <div class="container searchBar mb-5" data-aos="fade-up" id="programsArea">
                     <div class="row">
@@ -161,12 +144,7 @@
                     </div>
                 </div>
                 <!--/ Fin de buscador de cursos  -->
-                
-                
-                
                 <!-- Inicio de area de cursos -->
-                
-                
                 <div class="courses-js container cards mt-5">
                     <div id="courses-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                         <!-- se genera el contenido dinamicamente desde js -->
@@ -185,25 +163,19 @@
                         </div>
                     </div>
                 </div>
-                
                 <!--   Fin de area de cursos  -->
-                
                 <!--   Inicio de area de curriculums -->
-                
                 <div class="container" >
                     <div class="aboutUs mt-5 mb-5" data-aos="fade-up">
                         <div class="d-flex justify-content-center">
                             <div class="text-center services-titled justify-content-lg-center">
-                                <h2 class="text-uppercase title-text " data-aos="fade-down" data-aos-delay="50" >Acerca de BProcess</h2>
-                                
+                                <h2 class="text-uppercase title-text " data-aos="fade-down" data-aos-delay="50" >Acerca de BProcess</h2> 
                             </div>
-                            
                         </div>
                         <div>
                             <p class="card border-0 aboutCards mt-5 lh-lg"> <span class="fw-bold"> ¿Como empezó?</span> <br>
-                                Primero quiero contarte como se gesto Bprocess… veníamos trabajando en la consultora con Ari con proyectos financieros y nos dimos cuenta q estaba bien, eso nos podía dar plata pero no nos llenaba el alma. Entonces empezamos a mirar que de lo que estábamos haciendo nos gustaba que nos motivaba a seguir haciendo lo que hacíamos y tenia q ver con apoyar a las personas que tenían proyectos, ayudarlos a pensarse 360, a ver las cosas que le pasaban trabajando tanto habilidades duras, estrategias como también habilidades blandas… Y eso nos dejaba pensando, nos dejaba en contacto con las personas y eso nos encantaba entonces decidimos pensar como ayudar a mas gente
+                                Primero quiero contarte como se gestó Bprocess… veníamos trabajando en la consultora con Ari con proyectos financieros y nos dimos cuenta q estaba bien, eso nos podía dar plata pero no nos llenaba el alma. Entonces empezamos a mirar que de lo que estábamos haciendo nos gustaba que nos motivaba a seguir haciendo lo que hacíamos y tenia q ver con apoyar a las personas que tenían proyectos, ayudarlos a pensarse 360, a ver las cosas que le pasaban trabajando tanto habilidades duras, estrategias como también habilidades blandas… Y eso nos dejaba pensando, nos dejaba en contacto con las personas y eso nos encantaba entonces decidimos pensar como ayudar a mas gente
                                 Asi surge Bprocess… Bprocess tiene historia… para los que conocimos los casetes tiene lado A y B… <br> </p>
-                                
                                 <p class="card border-0 aboutCards mt-2 lh-lg">Estamos convencidas de que la vida es un continuo de procesos que empiezan, se entrelazan y terminan para volver a empezar… Creemos que la felicidad esta en el camino asi que el proceso es todo… es mucho mas q la suma de las partes.
                                     Para eso y ahora hablando del lado B decidimos integrar nuestra historia en nuestro proceso de crear, impulsar y sostener Bprocess.
                                     <br> </p>
@@ -214,19 +186,16 @@
                                     </p>
                                 </div>
                             </div>
-
                             <div class="d-flex flex-lg-nowrap rounded-3 flex-md-wrap flex-sm-wrap flex-wrap justify-content-center align-items-center cv" id="cvArea">
                                 <div class="flex-shrink-0" data-aos="slide-right" data-aos-delay="200">
                                     <div class="col p-5">
                                         <img class="img-thumbnail m-2 rounded-pill border-0 imgLuciana" src=".\assets\images\ari.png" alt="ariana">
                                     </div>
                                 </div>
-                                
                                 <div class="flex-grow-1 ms-3 text-center" data-aos="slide-left" data-aos-delay="300">
                                     <h3 class="text-uppercase"> Ariana E. Belotti </h3> 
                                     <h6 class="mb-5 lh-lg"> Magister en Ingeniería de la Innovación <br> Licenciada En Administración de Empresas  y en Marketing <br> Diplomado en Finanzas <br> Coach organizacional <br> PNL Practitioner  <br> Logoterapeuta </h6>     
                                 </div>
-                                
                             </div>
                             
                             

@@ -117,7 +117,12 @@ header {
   font-size: 1.5rem;
   color: var(--azul)
 }
- 
+
+.badge {
+  margin-top: -40px;
+  margin-left: 20px;
+
+}
 
 
 #footer {
