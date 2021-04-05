@@ -53,7 +53,7 @@ const displayCharacters = (filteredCharacters) => {
                 <div class="card coursesCard">
                     <img src="${filteredCharacters.img}" class="card-img-top">
                     <div class="card-body">
-                        <h3 class="text-capitalize">${filteredCharacters.name}</h3>
+                        <h3>${filteredCharacters.name}</h3>
                         <p class="cardDesc">${filteredCharacters.desc}</p>
                         <p class="price">$<span class="u-pull-right ">${filteredCharacters.price}</span></p>
                         <a href="#"  class="btn input add-to-cart infoContButton align-self-end" data-id=${filteredCharacters.id}>Agregar al carro</a>
@@ -210,7 +210,7 @@ function getFromLocalStorage() {
                 <td>
                     <img src="${course.image}" class="cartImg">
                 </td>
-                <td class="text-capitalize">${course.title}</td>
+                <td>${course.title}</td>
                 <td>$ ${course.price}.00 Ars</td>
                 <td>
                     <a href="#" class="remove bi bi-dash-circle" data-id="${course.id}"></a>

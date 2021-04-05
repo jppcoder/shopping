@@ -29,7 +29,7 @@ ul {
   list-style: none;
 }
 a {
-  font-size: 1.5rem; 
+  font-size: 1.4rem; 
 }
 h4 {
   font-size: 2.5rem;
@@ -64,14 +64,14 @@ header {
   margin-top: 12rem;
 }
 #sidebar-wrapper .list-group {
-  width: 3.5rem;
+  width: 3.3rem;
 }
 #page-content-wrapper {
   min-width: 100vw;
 }
 /* barra del menu */
 #menu-toggle {
-  width: 3.5rem;
+  width: 3.3rem;
 }
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
@@ -140,7 +140,7 @@ header {
 /* configuracion area de servicios ofrecidos*/
 }
 .services-list{
-  padding: 7rem 2rem;
+  padding: 3rem 2rem;
 }
 .services-list .services-title{
   padding: 0 14rem;
@@ -150,13 +150,16 @@ header {
 }
 .services-list.services{
   background: rgba(248, 252, 253, 0.973);
-  padding: 2rem 0;
+  padding: 0rem 0;
   width: 16rem;
   margin: 5rem .5rem;
   transition: box-shadow .7s ease;
 }
 .services-list .services:hover{
   box-shadow: var(--box-shadow);
+}
+.services-img{
+  font-size: 5rem;
 }
 
 /* configuraciones de carrito */
